@@ -1,0 +1,30 @@
+using System;
+using System.Diagnostics;
+
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
+class LeapYearChecker
+{
+    static void Main()
+    {
+        Console.Write("Enter a year: ");
+        int year = int.Parse(Console.ReadLine());
+
+        if (IsLeapYear(year))
+        {
+            Console.WriteLine("It's a leap year.");
+        }
+        else
+        {
+            Console.WriteLine("Not a leap year.");
+        }
+    }
+
+    static bool IsLeapYear(int year)
+    {
+        // Leap years are either divisible by 4 but not divisible by 100,
+        // or they are divisible by 400.
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+
+   
+}
