@@ -1,0 +1,24 @@
+while(true)
+{
+int firstNum = 1, SecondNum = 1, nextNum, numberOfElements;
+Console.WriteLine("Enter the number of terms in the Fibonacci sequence: ");
+numberOfElements = Convert.ToInt32(Console.ReadLine());
+    if(numberOfElements <= 2)
+    {
+        Console.WriteLine("Please input a number greater than 2.");
+        continue;
+    }
+    else
+    {
+        Console.Write($"{firstNum}\n{SecondNum}\n");
+        
+        for(int i = 2; i < numberOfElements; i++)
+        {
+        nextNum = firstNum + SecondNum;
+        Console.Write(nextNum + " ");
+        firstNum = SecondNum;
+        SecondNum = nextNum;
+        }    
+    }
+Console.ReadKey();
+}
