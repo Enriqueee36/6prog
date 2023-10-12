@@ -1,0 +1,70 @@
+Console.Write("How Many Students: ");
+int studnum = Convert.ToInt32(Console.ReadLine());
+
+for (int i = 0; i < studnum; i++)
+{
+    Console.Write("Enter Student Name: ");
+    string name = Console.ReadLine();
+
+    Console.Write("Enter Prelim, Midterm, and Finals Grade (e.g., 96 94 94): ");
+    string[] gradesInput = Console.ReadLine().Split();
+    
+    if (gradesInput.Length != 3)
+    {
+        Console.WriteLine("Invalid input. Please enter three grades separated by a space.");
+        continue;
+    }
+
+    double prelim = Convert.ToDouble(gradesInput[0]) * 0.3;
+    double midterm = Convert.ToDouble(gradesInput[1]) * 0.3;
+    double finals = Convert.ToDouble(gradesInput[2]) * 0.4;
+    
+    double totalgrade = prelim + midterm + finals;
+
+    Console.WriteLine("Student Name: {0}", name);
+    Console.WriteLine($"Prelim : {prelim}" + $"\t Midterms : {midterm}"+ $"\t Finals Grade : {finals} ");
+    Console.WriteLine("Final Grade: {0}", totalgrade);
+
+ if (totalgrade >= 99)
+    {
+        Console.WriteLine("Ratings : " + "1.0");
+    }
+        
+    else if (totalgrade >= 96)
+    {
+        Console.WriteLine("Ratings : " + "1.25");
+    }
+    else if (totalgrade >= 93)
+    {
+        Console.WriteLine("Ratings : " + "1.50");
+    }
+    else if (totalgrade >= 90)
+    {
+        Console.WriteLine("Ratings : " + "1.75");
+    }
+    else if (totalgrade >= 87)
+    {
+        Console.WriteLine("Ratings : " + "2.00");
+    }
+    else if (totalgrade >= 84)
+    {
+        Console.WriteLine("Ratings : " + "2.25");
+    }
+    else if (totalgrade >= 81)
+    {
+        Console.WriteLine("Ratings : " + "2.50");
+    } 
+    else if (totalgrade >= 78)
+    {
+        Console.WriteLine("Ratings : " + "2.75");
+    }
+    else if (totalgrade >= 75)
+    {
+        Console.WriteLine("Ratings : " + "3.0");
+    }
+    else
+    {
+        Console.WriteLine("Ratings : " + "5.0");
+    }
+    }
+    Console.ReadKey();
