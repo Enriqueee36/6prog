@@ -1,0 +1,37 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double wholepercentage = 100, netPay, grossPay, hrsWorked, ovtWorked, payRate,
+            SaLoan = 590.32, Union = .02, tax = .05;
+
+        Console.WriteLine("   WEEKLY PAYROLL INFORMATION  ");
+        Console.WriteLine("ENTER THE EMPLOYEE'S NAME: ");
+        string empName = Console.ReadLine();
+        Console.WriteLine("ENTER THE NUMBER OF HOURS WORKED FOR THIS WEEK: ");
+        hrsWorked = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("ENTER THE NUMBER OVERTIME HOURS WORKED THIS WEEK: ");
+        ovtWorked = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("ENTER THE EMPLOYEE'S HOURLY PAY RATE: ");
+        payRate = Convert.ToDouble(Console.ReadLine());
+
+        grossPay = hrsWorked * payRate;
+        double otpay = ovtWorked * 1.5 * payRate;
+        double deductions = tax + Union + SaLoan;
+        netPay = (grossPay + otpay) - deductions;
+
+        Console.WriteLine($"     TAX          : " + tax * wholepercentage + "%");
+        Console.WriteLine($"     UNION        : " + Union);
+        Console.WriteLine($"     SALOAN       : " + SaLoan);
+        Console.WriteLine($"     GROSS PAY    : " + grossPay);
+        Console.WriteLine($"     OVERTIME PAY : " + otpay);
+        Console.WriteLine($"     DEDUCTIONS   : " + deductions);
+        Console.WriteLine($"     NETPAY:      : " + netPay);
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("Total Salary : " + " Php. " + netPay);
+        Console.ReadKey(true);
+    }
+}
