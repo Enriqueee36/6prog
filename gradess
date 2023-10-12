@@ -1,4 +1,4 @@
-Console.Write("How Many Students: ");
+Console.Write("Enter the number of students: ");
 int studnum = Convert.ToInt32(Console.ReadLine());
 
 for (int i = 0; i < studnum; i++)
