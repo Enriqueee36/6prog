@@ -1,0 +1,31 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        //Display a header for the program
+        Console.WriteLine("+-----------------------------+");
+        Console.WriteLine("| Area of a Circle Calculator |");
+        Console.WriteLine("+ -----------------------------+");
+
+        //Prompt user for input (radius)
+        Console.Write("Enter the radius of the circle: ");
+
+        //Validate user input
+        while (true)
+        {
+            if (int.TryParse(Console.ReadLine(), out int radius))
+            {
+                double pi = Math.PI;
+                double area = pi * Math.Pow(radius, 2);
+
+                //Output the result in two decimal places
+                Console.WriteLine($"The area of the circle is: {area:F2}");
+                break;
+            }
+            else
+            {
+                Console.Write("Invalid input. \nPlease enter a valid number for the radius: ");
+            }
+        }
+    }
+}
