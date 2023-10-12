@@ -1,0 +1,75 @@
+// identifiers na need sa payroll
+
+double wholepercentage = 100, netPay, grossPay, hrsWorked, ovtWorked, payRate,
+
+
+// depende yung mga value dito ha
+SaLoan = 590.32, Union = .02, tax = .05;
+
+
+
+// First Interface
+Console.WriteLine("   WEEKLY PAYROLL INFORMATION  ");
+
+// Sa part nato hihingiin yung name kaya mageenter ng name 
+
+Console.WriteLine("ENTER THE EMPLOYEE'S NAME: ");
+string empName = Console.ReadLine();
+
+// Hours na tinarabaho
+Console.WriteLine("ENTER THE NUMBER OF HOURS WORKED FOR THIS WEEK: ");
+// converted sa double kase double yung data type na ginamit
+hrsWorked = Convert.ToDouble(Console.ReadLine());
+
+// Overtime na trinabaho
+Console.WriteLine("ENTER THE NUMBER OVERTIME HOURS WORKED THIS WEEK: ");
+ovtWorked = Convert.ToDouble(Console.ReadLine());
+
+ // Sweldo per hour
+Console.WriteLine("ENTER THE EMPLOYEE'S HOURLY PAY RATE: ");
+payRate = Convert.ToDouble(Console.ReadLine());
+
+
+
+// Formulas
+
+// para makuha yung gross pay = imumultiply si oras ng normal na oras na trabaho sa sweldo per hour
+grossPay = hrsWorked * payRate;
+
+// para makuha si overtime pay = imumultiply mo si oras ng overtime sa 1.5 at sa sweldo per hour
+double otpay = ovtWorked * 1.5 * payRate;
+
+// sa deductions naman yung value nito  SaLoan = 590.32, Union = .02, tax = .05;
+double deductions = tax + Union + SaLoan;
+
+// sa netpay is yung makukuhang result dito 
+                        // grossPay = hrsWorked * payRate 
+                            // sa ot pay naman is add sa makukuhang result dito
+                                           // otpay = ovtWorked * 1.5 * payRate
+                                                // tas sa deductions yung makukuhang result dito
+                                                        //  tax + Union + SaLoan
+netPay = (grossPay + otpay) - deductions;
+
+
+
+// dito na mapiprint yung mga result 
+
+/* 
+Console.WriteLine("ENTER THE EMPLOYEE'S NAME: ");
+string empName = Console.ReadLine();
+
+Console.WriteLine("WEEKLY PAYROLL INFORMATION FOR: "+ empName);
+*/
+
+
+Console.WriteLine($"     TAX          : " + tax * wholepercentage + "%");
+Console.WriteLine($"     UNION        : " + Union);
+Console.WriteLine($"     SALOAN       : " + SaLoan);
+Console.WriteLine($"     GROSS PAY    : " + grossPay);
+Console.WriteLine($"     OVERTIME PAY : " + otpay);
+Console.WriteLine($"     DEDUCTIONS   : " + deductions);
+Console.WriteLine($"     NETPAY:      : " + netPay);
+Console.WriteLine("");
+Console.WriteLine("");
+Console.WriteLine("Total Salary : " + " Php. " + netPay);
+Console.ReadKey(true);
