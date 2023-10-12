@@ -1,1 +1,7 @@
+Console.Write("Enter the radius of the circle: ");
+int radius = Convert.ToInt32(Console.ReadLine());
+
+double pi = Math.PI;
+
+Console.WriteLine("pi * (radius * radius));
 
