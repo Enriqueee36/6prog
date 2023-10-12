@@ -1,0 +1,46 @@
+using System;
+
+class Fibonacci
+{
+    static void Main()
+    {
+        Console.Write("Enter the number of terms in the Fibonacci sequence: ");
+        int n = int.Parse(Console.ReadLine());
+
+        if (n <= 0)
+        {
+            Console.WriteLine("Please enter a positive number of terms.");
+        }
+        else
+        {
+            PrintFibonacciSeries(n);
+        }
+    }
+
+    static void PrintFibonacciSeries(int n)
+    {
+        long first = 0;
+        long second = 1;
+
+        Console.Write("Fibonacci Sequence: ");
+
+        if (n >= 1)
+        {
+            Console.Write(first);
+        }
+        if (n >= 2)
+        {
+            Console.Write(", " + second);
+        }
+
+        for (int i = 3; i <= n; i++)
+        {
+            long next = first + second;
+            Console.Write(", " + next);
+            first = second;
+            second = next;
+        }
+
+        Console.WriteLine();
+    }
+}
